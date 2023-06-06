@@ -105,6 +105,7 @@ export default function CreateAccount({ alluser = [] }) {
   return (
     <div className={styles.container}>
       <h1>Create a new user</h1>
+  
       <form className={styles.form} onSubmit={submitForm}>
         <input
           type="text"

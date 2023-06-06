@@ -10,7 +10,7 @@ function ATM(props) {
     }
 
     return (
-       <div className={classes()} style={{maxWidth: "18rem"}}>
+       <div id="atmCard" className={classes()} style={{maxWidth: "18rem",  boxShadow: '2px 2px 13px rgba(0, 0, 0, 0.7)'}}>
         <div className={styles.card}>
           <div className={styles.card_header} >{props.header}</div>
           <div className={styles.card_body} >

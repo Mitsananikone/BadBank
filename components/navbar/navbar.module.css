@@ -49,6 +49,11 @@
   text-decoration: none;
 }
 
+.link:hover {
+  color: mediumblue;
+  text-decoration: underline;
+}
+
 .item > text {
   margin: 0 20px;
   padding: 10px;
@@ -98,3 +103,4 @@
 #adminButton:hover {
   color: red;
 }
+

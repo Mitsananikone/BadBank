@@ -42,7 +42,8 @@ function UserData() {
   return (
     <div className={styles.UserData_container}>
       <div className={styles.UserData_header}>
-        Transaction History
+        <h1>Transaction History</h1>
+        <br/><br/>
         {/* {userData && <h1>{userData.name}</h1>} */}
       </div>
       <div className={styles.UserData_table_container}>

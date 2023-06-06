@@ -1,8 +1,9 @@
 html {
     width: 100%;
     min-width: 100%;
+    height: 100%;
   }
 
-.pagecontainer {
-    border: 1px solid yellow;
-}
+  body {
+    background: linear-gradient(to bottom right, #6495ED, #87CEFA);
+  }

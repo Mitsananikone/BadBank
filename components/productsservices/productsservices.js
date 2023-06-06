@@ -14,11 +14,12 @@ export default function ProductServiceCard(props) {
           </div>
           <div className={styles.prodserv_card_body}>
             <p>{body}</p>
-          </div>
+         
           <div className={styles.prodserv_card_footer}>
             <a href={link}>
               <button className={styles.prodserv_learn_more_button}>Learn more</button>
             </a>
+          </div>
           </div>
         </div>
       </div>

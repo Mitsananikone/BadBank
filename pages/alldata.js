@@ -29,7 +29,7 @@ function AllData({ allUsers = [] }) {
   return (
     <div className={styles.AllData_container}>
       <h1> Administrator Page </h1>
-      <br/><br/>
+     
       <table className={styles.AllData_table}>
         <thead>
           <tr>

@@ -3,16 +3,16 @@ import styles from './footer.module.css';
 export default function Footer() {
     return (
     
-        <footer id={styles.footerContainer} className=" bg-blue-100 font-light pt-12 w-full mx-0  text-gray-500" data-pg-collapsed>
-            <div className=" mx-auto px-4 relative ">
-                <div className="flex flex-wrap -mx-4">
-                    <div className="w-full p-4 xl:mr-auto xl:w-4/12 text-left">
-                        <a href="#" className="font-medium hover:text-blue-800 inline-block mb-6 mr-auto text-3xl text-blue-600 uppercase no-underline ">Badbank</a>
-                        <p className="mb-4 text-sm text-left">Discover a new level of convenience and control with BadBank, your trusted banking app for seamless financial management</p> 
-                        <div className="mb-6"> <a href="#" className="hover:text-blue-600 no-underline ">+1 (832) 620-3026</a> <br/> <a href="#" className="hover:text-blue-600 no-underline ">Mitsananikone@gmail.com</a> 
+        <footer id={styles.footerContainer} data-pg-collapsed>
+            <div className={styles.footerInner}>
+                <div className={styles.footerInnerFlex}>
+                    <div className={styles.footerTextBlock}>
+                        <a href="#" className={styles.footerHeader}>Badbank</a>
+                        <p className={styles.footerParagraph}>Discover a new level of convenience and control with BadBank, your trusted banking app for seamless financial management</p> 
+                        <div style={{marginBottom: '1.5rem'}}> <a href="#" className="hover:text-blue-600 no-underline ">+1 (832) 620-3026</a> <br/> <a href="#" className="hover:text-blue-600 no-underline ">Mitsananikone@gmail.com</a> 
                         </div>         
-                        <div className="flex flex-wrap">                
-                        <div className="flex-wrap inline-flex space-x-3"> <a href="#" className="hover:text-blue-600" aria-label="facebook"> <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"> 
+                        <div className={styles.icons}>                
+                        <div className={styles.iconsInner}> <a href="#" className="hover:text-blue-600" aria-label="facebook"> <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"> 
                                     <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/> 
                                 </svg></a> <a href="#" className="hover:text-blue-600" aria-label="twitter"> <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"> 
                                     <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/> 
@@ -27,7 +27,7 @@ export default function Footer() {
                     </div> 
                     </div>
                    
-                    <div className="w-full p-4 xl:inline sm:inline-block xl:w-2/12 sm:w-4/12 flex justify-center">
+                    <div className={styles.footerInfoBlocks}>
                     <h2 className="font-bold mb-8 text-blue-600 text-lg uppercase text-right">About</h2>
                     <ul className="text-right">
                         <li className="mb-4"><a href="#" className="hover:text-blue-600 no-underline ">Our Vision</a></li>
@@ -37,8 +37,8 @@ export default function Footer() {
                     </ul>
                     </div>
 
-                    <div className="w-full p-4 xl:inline sm:inline-block xl:w-2/12 sm:w-4/12 flex justify-center text-right">
-                        <h2 className="font-bold mb-8 text-blue-600 text-lg uppercase">Services</h2>
+                    <div className={styles.footerInfoBlocks} >
+                        <h2 className="font-bold mb-8 text-blue-600 text-lg uppercase" style={{textAlign: "right"}}>Services</h2>
                         <ul className="text-right">
                             <li className="mb-4"><a href="#" className="hover:text-blue-600 no-underline">Account Management</a></li>
                             <li className="mb-4"><a href="#" className="hover:text-blue-600 no-underline">Payment Solutions</a></li>
@@ -47,7 +47,7 @@ export default function Footer() {
                             <li className="mb-4"><a href="#" className="hover:text-blue-600 no-underline">Financial Planning</a></li>
                         </ul>
                     </div>
-                    <div className="w-full p-4 xl:inline sm:inline-block xl:w-2/12 sm:w-4/12 flex justify-center">
+                    <div className={styles.footerInfoBlocks} >
                         <h2 className="font-bold mb-8 text-blue-600 text-lg uppercase text-right">Other</h2>
                         <ul className="text-right">
                             <li className="mb-4"><a href="#" className="hover:text-blue-600 no-underline">Business Stories</a></li>
