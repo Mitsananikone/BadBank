@@ -1,0 +1,90 @@
+/* alldata.module.css */
+
+.AllData_container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.AllData_table {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 80%;
+}
+
+.AllData_table thead tr {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.AllData_table th,
+.AllData_table td {
+  padding: 20px;
+  margin: 20px;
+}
+
+.AllData_table tbody tr {
+  text-align: center;
+}
+
+.AllData_button {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-color: #ccc;
+  background-color: #f2f2f2;
+}
+
+.AllData_button:hover {
+  background-color: lightcoral;
+}
+
+.AllData_header {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.AllData_table_container {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  .AllData_table th:nth-child(2),
+  .AllData_table td:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .AllData_table th:nth-child(4),
+  .AllData_table td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AllData_table th:nth-child(3),
+  .AllData_table td:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .AllData_table th:nth-child(3),
+  .AllData_table td:nth-child(3) {
+    display: none;
+  }
+  .AllData_table th:nth-child(4),
+  .AllData_table td:nth-child(4) {
+    display: none;
+  }
+}

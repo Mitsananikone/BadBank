@@ -1,0 +1,8 @@
+html {
+    width: 100%;
+    min-width: 100%;
+  }
+
+.pagecontainer {
+    border: 1px solid yellow;
+}

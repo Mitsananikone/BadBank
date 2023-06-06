@@ -1,0 +1,11 @@
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+
+#footerContainer {
+    margin-top: 300px;
+    /* border: 1px solid green; */
+    padding: 32px;
+}
+
