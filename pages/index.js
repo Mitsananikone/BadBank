@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Home from "./home"
 import { getAllUsers } from '../lib/dal';
 import { connectToDatabase } from '../lib/mongodb';
-import dbConfig from '../db.config';
+require('dotenv').config();
 import { UserContext } from '../contexts/usercontext';
 
 
@@ -16,7 +16,7 @@ export default function App({ allUsers = [] }) {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch(`${dbConfig.apiurl}/api/login`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

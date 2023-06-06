@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../contexts/usercontext';
-import dbConfig from '../../db.config';
+require('dotenv').config();
 import styles from './dashboard.module.css';
 
 

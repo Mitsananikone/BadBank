@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
-import dbConfig from '../../../db.config';
+require('dotenv').config();
 import UserModel from '../../../lib/UserModel';
 
-mongoose.connect(dbConfig.uri, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   connectTimeoutMS: 10000,

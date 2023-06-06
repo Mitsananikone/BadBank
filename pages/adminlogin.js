@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styles from '../styles/Login.module.css';
-import dbConfig from '../db.config';
+require('dotenv').config();
 import { useRouter } from 'next/router';
 
 export default function AdminLogin() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const adminPassword = dbConfig.admin;
+  const adminPassword = process.env.admin;
   const router = useRouter();
 
   const handlePasswordChange = (e) => {

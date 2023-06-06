@@ -3,7 +3,7 @@ import { UserContext } from '../contexts/usercontext';
 import ATM from '../components/atm/atm';
 import styles from '../styles/ATM.module.css';
 import { useRouter } from 'next/router';
-import dbConfig from '../db.config';
+require('dotenv').config();
 import { getUserById } from '@/lib/dal';
 import { DashBoard } from '@/components/dashboard/dashboard';
 export async function getServerSideProps(context) {
@@ -63,7 +63,7 @@ function Deposit() {
     // }
 
     try {
-      const response = await fetch(`${dbConfig.apiurl}/api/deposit`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/deposit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: user._id, amount: parseFloat(deposit), balance: parseFloat(user.balance)})

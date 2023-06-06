@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/CreateAccount.module.css';
-import dbConfig from '../db.config';
+require('dotenv').config();
 
 import { useRouter } from 'next/router';
 
@@ -66,7 +66,7 @@ export default function CreateAccount({ alluser = [] }) {
     }
 
     try {
-      const res = await fetch(`${dbConfig.apiurl}/api/createaccount`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/createaccount`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ export default function CreateAccount({ alluser = [] }) {
 
  export async function getServerSideProps() {
   try {
-    const res = await fetch(`${dbConfig.apiurl}/api/createaccount`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/createaccount`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

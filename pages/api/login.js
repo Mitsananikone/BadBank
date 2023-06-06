@@ -1,7 +1,7 @@
 import Cors from 'cors';
 import initMiddleware from '../../lib/init-middleware';
 import { loginUser } from '../../lib/dal';
-import dbConfig from '../../db.config';
+require('dotenv').config();
 
 
 // Initialize the cors middleware

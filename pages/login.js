@@ -1,13 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
 import { UserContext } from '../contexts/usercontext';
 import styles from '../styles/Login.module.css';
-import dbConfig from '../db.config';
+require('dotenv').config();
 import { useRouter } from 'next/router';
 import { UserContextProvider } from '../contexts/usercontext';
-import { useFetch } from '../hooks/useFetch';
-import MongoUserContext from '../contexts/mongousercontext';
-import { DashBoard } from '@/components/dashboard/dashboard';
+
 
 export default function Login() {
   const Router = useRouter();
@@ -21,17 +18,6 @@ export default function Login() {
   const [showSuccess, setShowSuccess] = useState(false);
   const { user, setUser } = useContext(UserContext);
 
-
-  // useFetch({
-  //   url: `${dbConfig.apiurl}/api/user`, // Replace with the appropriate API endpoint to fetch user data
-  //   onSuccess: (data) => {
-  //     setUser(data); // Update the user context with the fetched data
-  //   },
-  //   onError: (error) => {
-  //     console.error('Error fetching user data:', error);
-  //   },
-  // });
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -51,7 +37,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const { user } = await fetch(`${dbConfig.apiurl}/api/login`, {
+      const { user } = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +46,7 @@ export default function Login() {
         
       }).then((res) => {
         if (res.status !== 200) {
-          setShowError(true); // show the error popup if login fails
+          setShowError(true); 
           throw new Error(res.statusText);
         }
         return res.json();
@@ -70,12 +56,12 @@ export default function Login() {
         return str.charAt(0).toUpperCase() + str.slice(1);
       };
 
-      setUser(user); // set the user in the UserContext state
+      setUser(user); 
 
-      // let {mongoUser} = MongoUserContext(user._id);
+
 
       setMessage(`Success! Welcome, ${capitalizeFirstLetter(user.name)}.`);
-      setShowSuccess(true); // show the success popup if login succeeds
+      setShowSuccess(true); 
     } catch (error) {
       setMessage(`User Email and Password could not be verified XXXXX`);
       setShowError(true);

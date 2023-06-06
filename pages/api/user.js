@@ -2,7 +2,7 @@ import Cors from 'cors';
 import initMiddleware from '../../lib/init-middleware';
 import { createUser, getAllUsers, loginUser, updateUserBalance } from '../../lib/dal';
 import { getConnectedDatabase } from '@/lib/db';
-import dbConfig from '../../db.config';
+require('dotenv').config();
 
 
 const cors = initMiddleware(
