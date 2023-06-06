@@ -1,6 +1,7 @@
 /* alldata.module.css */
 
 .AllData_container {
+  width: 100vw;
   margin-top: 20px;
   display: flex;
   flex-direction: column;

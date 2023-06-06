@@ -20,16 +20,18 @@ export default function CreateAccount({ alluser = [] }) {
   const [popup, setPopup] = useState('');
   const [show, setShow] = useState(false);
 
-
+  // Function to validate email format
   const validateEmail = (email) => {
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     return emailRegex.test(email);
   };
 
+  // Function to validate password length
   const validatePassword = (password) => {
     return password.trim().length >= 8;
   };
 
+  // Function to clear the form
   const clearForm = () => {
     setName('');
     setEmail('');
@@ -41,6 +43,7 @@ export default function CreateAccount({ alluser = [] }) {
     setPopup('');
   };
 
+  // Function to validate the form fields
   const validateForm = () => {
     setNameValid(name.trim().length > 0);
     setEmailValid(validateEmail(email));
@@ -100,12 +103,11 @@ export default function CreateAccount({ alluser = [] }) {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className={styles.container}>
       <h1>Create a new user</h1>
-  
+
       <form className={styles.form} onSubmit={submitForm}>
         <input
           type="text"
@@ -113,7 +115,7 @@ export default function CreateAccount({ alluser = [] }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           onBlur={() => setNameValid(name.trim().length > 0)}
-          className={nameValid ? "" : "invalid"}
+          className={nameValid ? '' : 'invalid'}
         />
         <br />
         <input
@@ -122,7 +124,7 @@ export default function CreateAccount({ alluser = [] }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => setEmailValid(validateEmail(email))}
-          className={emailValid ? "" : "invalid"}
+          className={emailValid ? '' : 'invalid'}
         />
         <br />
         <input
@@ -131,31 +133,38 @@ export default function CreateAccount({ alluser = [] }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           onBlur={() => setPasswordValid(password.trim().length >= 8)}
-          className={passwordValid ? "" : "invalid"}
+          className={passwordValid ? '' : 'invalid'}
         />
         <br />
         <button type="submit" disabled={loading}>
           {loading ? 'Submitting...' : 'Submit'}
         </button>
       </form>
+
       {popup && (
         <div className={styles.popup}>
           <div className={styles.popup_body}>
-            {popup === "success" ? (
+            {popup === 'success' ? (
               <div>
                 Account created - Please log in
                 <div className={styles.button_container}>
-                  <button className={styles.buttonChoose} onClick={() => Router.push('/login')}>Go to Login</button>
-                  <button className={styles.buttonChoose} onClick={() => clearForm()}>Create Another Account</button>
+                  <button className={styles.buttonChoose} onClick={() => Router.push('/login')}>
+                    Go to Login
+                  </button>
+                  <button className={styles.buttonChoose} onClick={() => clearForm()}>
+                    Create Another Account
+                  </button>
                 </div>
               </div>
             ) : (
               <div className={styles.popup}>
                 <div className={styles.popup_body}>
                   <div>
-                    Error creating account: {popup === "invalidEmail" ? "Email not in correct format" : "Password is less than 8 characters"}
+                    Error creating account: {popup === 'invalidEmail' ? 'Email not in correct format' : 'Password is less than 8 characters'}
                     <div className="button-container">
-                      <button className={styles.buttonChoose} onClick={() => clearForm()}>Try Again</button>
+                      <button className={styles.buttonChoose} onClick={() => clearForm()}>
+                        Try Again
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -166,15 +175,15 @@ export default function CreateAccount({ alluser = [] }) {
       )}
     </div>
   );
-}  
+}
 
- export async function getServerSideProps() {
+export async function getServerSideProps() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/createaccount`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     });
 
     if (res.status !== 200) {
@@ -190,4 +199,3 @@ export default function CreateAccount({ alluser = [] }) {
     return { props: { alluser: [] } };
   }
 }
-

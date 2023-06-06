@@ -1,35 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles/AllData.module.css'
-// You might need to adjust the import path depending on your file structure
-import { getDatabase } from '../lib/db';
+import styles from '../styles/AllData.module.css';
 import { connectToDatabase } from '@/lib/mongodb';
 
 function AllData({ allUsers = [] }) {
   const [users, setUsers] = useState(allUsers);
 
-
-  async function deleteUser(id) {
+  const deleteUser = async (id) => {
     try {
       const response = await fetch(`/api/user/${id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
-        // remove user from state
-        setUsers(users.filter(user => user._id !== id));
+        // Remove user from state
+        setUsers(users.filter((user) => user._id !== id));
       } else {
-        console.error("Error deleting user: ", await response.text());
+        console.error('Error deleting user: ', await response.text());
       }
     } catch (err) {
-      console.error("Error deleting user: ", err);
+      console.error('Error deleting user: ', err);
     }
-  }
+  };
 
   return (
     <div className={styles.AllData_container}>
-      <h1> Administrator Page </h1>
-     
+      <h1>Administrator Page</h1>
+
       <table className={styles.AllData_table}>
         <thead>
           <tr>
@@ -42,7 +39,7 @@ function AllData({ allUsers = [] }) {
           </tr>
         </thead>
         <tbody>
-          {users.map(user => (
+          {users.map((user) => (
             <tr key={user._id}>
               <td>{user.name}</td>
               <td>{user._id}</td>
@@ -50,14 +47,15 @@ function AllData({ allUsers = [] }) {
               <td>{user.password}</td>
               <td>{user.balance}</td>
               <td>
-                <button className={styles.AllData_button} onClick={() => deleteUser(user._id)}>Delete</button>
+                <button className={styles.AllData_button} onClick={() => deleteUser(user._id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-
   );
 }
 

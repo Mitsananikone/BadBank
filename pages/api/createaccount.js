@@ -17,6 +17,8 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const { name, email, password } = req.body;
+
+      // Create a new user
       const newUser = await createUser({ name, email, password });
 
       res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -28,6 +30,8 @@ export default async function handler(req, res) {
   } else if (req.method === 'GET') {
     try {
       const { db } = await getConnectedDatabase();
+
+      // Get all users
       const allUsers = await getAllUsers(db);
 
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -37,6 +41,7 @@ export default async function handler(req, res) {
       res.status(500).json({ message: 'Error fetching users', error: error.message });
     }
   } else {
+    // Handle invalid HTTP methods
     res.setHeader('Allow', ['GET', 'POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }

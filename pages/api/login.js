@@ -3,7 +3,6 @@ import initMiddleware from '../../lib/init-middleware';
 import { loginUser } from '../../lib/dal';
 require('dotenv').config();
 
-
 // Initialize the cors middleware
 const cors = initMiddleware(
   Cors({
@@ -13,7 +12,7 @@ const cors = initMiddleware(
 
 export default async function handler(req, res) {
   await cors(req, res);
-  
+
   const { email, password } = req.body;
 
   try {
@@ -23,12 +22,11 @@ export default async function handler(req, res) {
 
     const user = await loginUser(email, password);
     
-    //  console.log("api/login: " + user)
-
     if (!user) {
       throw new Error('User not found');
     }
 
+    // Set the necessary headers for CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json({ user });
   } catch (error) {

@@ -1,6 +1,6 @@
 html {
-    width: 100%;
-    min-width: 100%;
+    width:max-content;
+    min-width: max-content;
     height: 100%;
   }
 

@@ -4,14 +4,13 @@
 
 
 #footerContainer {
-
     display: flex;
     background-color: #ebf8ff;
     margin-top: 300px;
     font-weight: 300;
     padding: 32px;
     padding-top: 3rem;
-    width: 100%;
+    width: 100vw;
     margin-left: 0;
     margin-right: 0;
     color: #718096;
@@ -34,7 +33,7 @@
 
 .footerTextBlock {
     padding: 1rem;
-    margin-right: auto;
+    margin-right: 0;
     width: 25rem;
     text-align: left;
 }
@@ -73,11 +72,11 @@
 .footerInfoBlocks {
     display: inline-block;
     padding: 1rem;
-    width: 33.333vw;
+    width: 30vw;
 }
 
 @media (min-width: 640px) {
     .footerInfoBlocks {
-      width: 500px;
+      width: 200px;
     }
   }

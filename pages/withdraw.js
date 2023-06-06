@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 require('dotenv').config();
 import { getUserById } from '@/lib/dal';
 import { DashBoard } from '@/components/dashboard/dashboard';
+
 export async function getServerSideProps(context) {
   const { userId } = context.query; // Extract the userId from the query parameters
 
@@ -38,13 +39,16 @@ function Withdraw() {
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(true);
   const [showSuccess, setShowSuccess] = useState(false);
+  const router = useRouter();
 
+  // Clear the form inputs and status messages
   const clearForm = () => {
     setShow(true);
     setStatus('');
     setWithdrawal(0);
   };
 
+  // Handle the form submission for withdrawal
   const submitWithdrawal = async (e) => {
     e.preventDefault();
     setShow(false);
@@ -55,12 +59,6 @@ function Withdraw() {
       setLoading(false);
       return;
     }
-
-    // if (parseFloat(withdrawal) <= 0) {
-    //   setStatus('Please enter a positive number');
-    //   setLoading(false);
-    //   return;
-    // }
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/withdraw`, {
@@ -87,8 +85,8 @@ function Withdraw() {
     }
   };
 
+  // Render error message or redirect to an appropriate error page
   if (typeof error !== 'undefined') {
-    // Render error message or redirect to an appropriate error page
     return (
       <div>
         <h1>Oops! Something went wrong.</h1>
@@ -99,11 +97,10 @@ function Withdraw() {
   
   const secondCardButton = withdrawal <= 0 || loading;
 
+  // Redirect to the login page if user is not logged in
   if (!user) {
-    const Router = useRouter();
-
     const handleLoginClick = () => {
-      Router.push('/home');
+      router.push('/home');
     }
     return (
       <div className={styles.container}>
@@ -114,7 +111,7 @@ function Withdraw() {
 
   return (
     <div className={styles.container}>
-       {/* <DashBoard user={user} /> */}
+      {/* <DashBoard user={user} /> */}
       <div>
         <ATM
           bgcolor="danger"
@@ -122,7 +119,6 @@ function Withdraw() {
           header="WITHDRAW"
           title="BALANCE"
           balance={`$${user.balance}`}
-          // status={status}
           disabled="true"
           show={show}
           showSuccess={showSuccess}
@@ -150,13 +146,12 @@ function Withdraw() {
                   onClick={submitWithdrawal}
                 >
                   {loading ? 'Withdrawing...' : 'Withdraw'}
-                </button>                
+                </button>
               </div>
             ) : (
               // Success message
               <div className={styles.popup}>
                 <div className={styles.popup_body}>
-                  {/* <h3>Success!</h3> */}
                   <p>{status}</p>
                   <button
                     className="btn btn-light"
@@ -177,6 +172,5 @@ function Withdraw() {
     </div>
   );
 }
-
 
 export default Withdraw;

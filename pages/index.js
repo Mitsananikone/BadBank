@@ -1,17 +1,16 @@
 import React, { useContext, useEffect } from 'react';
-import Home from "./home"
+import Home from './home';
 import { getAllUsers } from '../lib/dal';
 import { connectToDatabase } from '../lib/mongodb';
-require('dotenv').config();
 import { UserContext } from '../contexts/usercontext';
 
-
+require('dotenv').config();
 
 export default function App({ allUsers = [] }) {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    console.log('Index user:', user); // add this line
+    console.log('Index user:', user); // Log the user to the console
   }, [user]);
 
   const handleLogin = async () => {
@@ -21,14 +20,14 @@ export default function App({ allUsers = [] }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }), // pass email and password from state
+        body: JSON.stringify({ email, password }), // Pass email and password from state
       });
 
       if (res.status !== 200) {
         throw new Error(await res.text());
       }
 
-      const { user, token } = await res.json(); // assuming the response includes the token
+      const { user, token } = await res.json(); // Assuming the response includes the token
 
       // Save the user and token in the UserContext state
       setUser({ ...user, token });
@@ -39,19 +38,16 @@ export default function App({ allUsers = [] }) {
   };
 
   return (
-    <div className="homeContainer" >
+    <div className="homeContainer">
       <Home />
-      {/* <button onClick={handleLogin} style={{border: '1px solid red'}}>Login</button> */}
     </div>
   );
 }
-
 
 export async function getServerSideProps() {
   try {
     const { db } = await connectToDatabase();
     const users = db.collection('users').find();
-    // const stringifiedUsers = JSON.stringify(users);
     const stringifiedUsers = JSON.stringify(users);
     const parsedUsers = JSON.parse(stringifiedUsers, (key, value) => {
       if (key === '_id') {

@@ -3,48 +3,24 @@ import { UserContext } from '../contexts/usercontext';
 import ATM from '../components/atm/atm';
 import styles from '../styles/ATM.module.css';
 import { useRouter } from 'next/router';
-require('dotenv').config();
-import { getUserById } from '@/lib/dal';
-import { DashBoard } from '@/components/dashboard/dashboard';
-export async function getServerSideProps(context) {
-  const { userId } = context.query; // Extract the userId from the query parameters
 
-  try {
-    // Fetch the user data using the userId
-    const user = await getUserById(userId);
-
-    // Return the user data as props
-    return {
-      props: {
-        user,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching user data:', error);
-
-    // Return the error as props to the error page for debugging
-    return {
-      props: {
-        error: error.message,
-      },
-    };
-  }
-}
-
-function Deposit() {
+export default function Deposit() {
   const { user, setUser } = useContext(UserContext);
   const [deposit, setDeposit] = useState(0);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(true);
   const [showSuccess, setShowSuccess] = useState(false);
+  const router = useRouter();
 
+  // Clear the form inputs and status messages
   const clearForm = () => {
     setShow(true);
     setStatus('');
     setDeposit(0);
   };
 
+  // Handle the form submission for deposit
   const submitDeposit = async (e) => {
     e.preventDefault();
     setShow(false);
@@ -56,17 +32,11 @@ function Deposit() {
       return;
     }
 
-    // if (parseFloat(deposit) <= 0) {
-    //   setStatus('Please enter a positive number');
-    //   setLoading(false);
-    //   return;
-    // }
-
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/deposit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: user._id, amount: parseFloat(deposit), balance: parseFloat(user.balance)})
+        body: JSON.stringify({ userId: user._id, amount: parseFloat(deposit), balance: parseFloat(user.balance) })
       });
 
       const data = await response.json();
@@ -87,23 +57,10 @@ function Deposit() {
     }
   };
 
-  if (typeof error !== 'undefined') {
-    // Render error message or redirect to an appropriate error page
-    return (
-      <div>
-        <h1>Oops! Something went wrong.</h1>
-        <p>{error}</p>
-      </div>
-    );
-  }
-
-  const secondCardButton = deposit <= 0 || loading;
-
+  // Redirect to the login page if user is not logged in
   if (!user) {
-    const Router = useRouter();
-
     const handleLoginClick = () => {
-      Router.push('/home');
+      router.push('/home');
     }
     return (
       <div className={styles.container}>
@@ -113,9 +70,7 @@ function Deposit() {
   }
 
   return (
-   
     <div className={styles.container}>
-   {/* <DashBoard user={user} /> */}
       <div>
         <ATM
           bgcolor="success"
@@ -123,14 +78,12 @@ function Deposit() {
           header="DEPOSIT"
           title="BALANCE"
           balance={`$${user.balance}`}
-          // status={status}
           disabled="true"
           show={show}
           showSuccess={showSuccess}
           body={
             show ? (
               <div className={styles.form}>
-                {/* Deposit form */}
                 <label>
                   <br />
                   Deposit Amount
@@ -147,31 +100,28 @@ function Deposit() {
                   id="ATMsubmit"
                   type="submit"
                   className="btn btn-light"
-                  disabled={secondCardButton}
+                  disabled={loading || deposit <= 0}
                   onClick={submitDeposit}
                 >
                   {loading ? 'Depositing...' : 'Deposit'}
-                </button>                
+                </button>
               </div>
             ) : (
-              // Success message
-                <div className={styles.popup}>
-                  <div className={styles.popup_body}>
-                    {/* <h3>Success!</h3> */}
-                    <p>{status}</p>
-                    <button
-                      className="btn btn-light"
-                      onClick={() => {
-                        clearForm();
-                        setShow(true);
-                        setShowSuccess(false);
-                      }}
-                    >
-                      OK
-                    </button>
-                  </div>
+              <div className={styles.popup}>
+                <div className={styles.popup_body}>
+                  <p>{status}</p>
+                  <button
+                    className="btn btn-light"
+                    onClick={() => {
+                      clearForm();
+                      setShow(true);
+                      setShowSuccess(false);
+                    }}
+                  >
+                    OK
+                  </button>
                 </div>
-      
+              </div>
             )
           }
         />
@@ -179,5 +129,3 @@ function Deposit() {
     </div>
   );
 }
-
-export default Deposit;

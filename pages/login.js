@@ -5,7 +5,6 @@ require('dotenv').config();
 import { useRouter } from 'next/router';
 import { UserContextProvider } from '../contexts/usercontext';
 
-
 export default function Login() {
   const Router = useRouter();
   const [email, setEmail] = useState('');
@@ -46,7 +45,7 @@ export default function Login() {
         
       }).then((res) => {
         if (res.status !== 200) {
-          setShowError(true); 
+          setShowError(true);
           throw new Error(res.statusText);
         }
         return res.json();
@@ -56,12 +55,10 @@ export default function Login() {
         return str.charAt(0).toUpperCase() + str.slice(1);
       };
 
-      setUser(user); 
-
-
+      setUser(user);
 
       setMessage(`Success! Welcome, ${capitalizeFirstLetter(user.name)}.`);
-      setShowSuccess(true); 
+      setShowSuccess(true);
     } catch (error) {
       setMessage(`User Email and Password could not be verified XXXXX`);
       setShowError(true);
@@ -99,17 +96,15 @@ export default function Login() {
   return (
     <UserContextProvider>
       <div className={styles.container}>
-      {/* <DashBoard user={user} /> */}
         <h1>Login</h1>
 
-        {/* <h6> {JSON.stringify(`${mongoUser}`)}</h6> */}
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
-            className={emailValid ? "" : "invalid"}
+            className={emailValid ? '' : 'invalid'}
           />
           <br />
           <input
@@ -117,15 +112,13 @@ export default function Login() {
             placeholder="Password"
             value={password}
             onChange={handlePasswordChange}
-            className={passwordValid ? "" : "invalid"}
+            className={passwordValid ? '' : 'invalid'}
           />
           <br />
           <button type="submit">
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-
-        
 
         {showError && (
           <div className={styles.popup}>
@@ -134,9 +127,7 @@ export default function Login() {
               <p>{message}</p>
               <button
                 className="btn btn-light"
-                onClick={() => {
-                  handleCloseErrorPopup();
-                }}
+                onClick={handleCloseErrorPopup}
               >
                 Close
               </button>
@@ -150,9 +141,7 @@ export default function Login() {
               <p>{message}</p>
               <button
                 className="btn btn-light"
-                onClick={() => {
-                  handleCloseSuccessPopup();
-                }}
+                onClick={handleCloseSuccessPopup}
               >
                 Close
               </button>

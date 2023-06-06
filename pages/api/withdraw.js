@@ -10,7 +10,9 @@ const cors = initMiddleware(
 
 export default async function handler(req, res) {
   await cors(req, res);
+
   if (req.method !== 'POST') {
+    // Only allow POST method
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
     return;
@@ -20,24 +22,18 @@ export default async function handler(req, res) {
     const { userId, amount, balance } = req.body;
 
     if (isNaN(amount)) {
+      // Check if amount is a valid number
       res.status(400).json({ message: 'Please enter a valid number' });
       return;
     }
 
-    // if (parseFloat(amount) <= 0) {
-    //   res.status(400).json({ message: 'Please enter a positive number' });
-    //   return;
-    // }
-
     await updateUserBalance(userId, amount, balance, 'Withdraw');
-
     let user = await getUserById(userId);
+    await saveTransactionHistory(user, amount, balance, 'Withdraw'); // Save transaction history for withdrawal
 
-
-    await saveTransactionHistory(user, amount, balance, 'Withdraw'); // Pass the user object
-   
     if (!user) {
-      res.status(400).json({ message: result.message });
+      // User not found
+      res.status(400).json({ message: 'User not found' });
       return;
     }
 

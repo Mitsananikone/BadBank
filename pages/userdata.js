@@ -10,21 +10,20 @@ function UserData() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    // Fetch user data when user context changes
     if (user) {
-      // Call the function to fetch user data from MongoDB Atlas
       getUserData(user._id)
         .then((userData) => {
           setUserData(userData);
         })
         .catch((error) => {
-          console.error('Failed to fetch user data from MongoDB Atlas DASHBOARD:', error);
+          console.error('Failed to fetch user data:', error);
         });
     }
   }, [user]);
-  
+
   const getUserData = async (userId) => {
     try {
-      // Replace this with your actual API call or database query to fetch user data
       const response = await fetch(`/api/user/${userId}`);
       const userData = await response.json();
       return userData;
@@ -34,6 +33,7 @@ function UserData() {
   };
 
   useEffect(() => {
+    // Update transaction history when user data changes
     if (userData) {
       setTransactionHistory(userData.transactionHistory);
     }
@@ -43,15 +43,11 @@ function UserData() {
     <div className={styles.UserData_container}>
       <div className={styles.UserData_header}>
         <h1>Transaction History</h1>
-        <br/><br/>
-        {/* {userData && <h1>{userData.name}</h1>} */}
       </div>
       <div className={styles.UserData_table_container}>
-        {/* <DashBoard user={userData} /> */}
         <table className={styles.UserData_table}>
           <thead>
             <tr>
-              {/* <th>User</th> */}
               <th>Transaction</th>
               <th>Day</th>
               <th>Time</th>
@@ -61,7 +57,7 @@ function UserData() {
           </thead>
           <tbody>
             {transactionHistory.map((transaction) => {
-              const timestamp = new Date(transaction.timestamp); // Convert to Date object
+              const timestamp = new Date(transaction.timestamp);
               const dateString = timestamp.toLocaleDateString();
               const timeString = timestamp.toLocaleTimeString();
 
@@ -74,7 +70,6 @@ function UserData() {
                       : styles.withdrawRow
                   }
                 >
-                  {/* <td style={{ textTransform: 'capitalize' }}>{userData.name}</td> */}
                   <td>{transaction.transactionType}</td>
                   <td>{dateString}</td>
                   <td>{timeString}</td>

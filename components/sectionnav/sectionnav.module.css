@@ -1,95 +1,98 @@
 .secnav_parent {
-    top: 300px;
-    width: 75vw;
-    color: black;
-  }
-  
-  .secnav_tabs {
-    position: relative;
-    text-align: center;
-  }
-  
-  .secnav_tabs_list {
-    border-bottom: 1px solid mediumblue;
-    font-size: large;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    list-style: none;
-    margin-top: 15px;
-    margin-bottom: 0;
-    position: relative;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 110px;
-    padding-inline-start: 0px;
-  }
+  top: 300px;
+  width: 75vw;
+  color: black;
+}
 
-  
-  .secnav_tabs_list_item {
-    box-sizing: border-box;
-    /* border: 1px solid red; */
-    padding: 15px 0 4px;
-    display: flex;
-    margin: 0 20px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .secnav_tabs_list_item a {
-    color: black;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 24px;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
-    position: relative;
-    background-color: transparent;
-  }
+.secnav_tabs {
+  position: relative;
+  text-align: center;
+}
 
-  .secnav_tabs_list_item.active {
-    color: dodgerblue;
-    background-color: dodgerblue;
-  }
-  
+.secnav_tabs_list {
+  border-bottom: 1px solid mediumblue;
+  font-size: large;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  margin-top: 15px;
+  margin-bottom: 0;
+  position: relative;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 110px;
+  padding-inline-start: 0px;
+}
 
- .secnav_tabs_list_item.active a {
+
+.secnav_tabs_list_item {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  padding: 15px 0 4px;
+  display: flex;
+  margin: 0 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.secnav_tabs_list_item a {
+  color: black;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  position: relative;
+  background-color: transparent;
+}
+
+
+
+.secnav_tabs_list_item.active {
+  color: dodgerblue;
+  background-color: dodgerblue;
+}
+
+
+.secnav_tabs_list_item.active a {
   color: blue;
   background-color: dodgerblue;
 }
-  
-.secnav_tabs_list_item a:hover{
+
+.secnav_tabs_list_item a:hover {
   color: mediumblue;
 }
+
 .secnav_tabs_list_item a:focus {
   color: mediumblue;
   /* background-color: dodgerblue; */
-  
+
 }
- 
 
-  .secnav_active_tab_line a {
-    border-bottom: 1px solid mediumblue;
-    width: 100%;
-  }
 
-  .secnav_tabs_list_item a:before,
-  .secnav_tabs_list_item.active a:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: mediumblue;
-    transition: width 0.3s ease-out;
-  }
+.secnav_active_tab_line a {
+  border-bottom: 1px solid mediumblue;
+  width: 100%;
+}
 
-  /* .secnav_tabs_list_item a::after,
+.secnav_tabs_list_item a:before,
+.secnav_tabs_list_item.active a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: mediumblue;
+  /* transition: width 0.3s ease-out; */
+}
+
+/* .secnav_tabs_list_item a::after,
   .secnav_tabs_list_item.active a::after {
     content: '';
     position: absolute;
@@ -100,116 +103,138 @@
     background-color: mediumblue;
     transition: width 0.3s ease-in;
   } */
-  
-  .secnav_tabs_list_item a:hover:before,
-  .secnav_tabs_list_item.active a:before {
-    background-color: mediumblue;
-    width: 100%;
-  }
-  
-  .secnav_tabs_list_item a:active {
-    color: mediumblue;
-    font-style: bold;
-    width: 100%;
-  }
 
-  .secnav_tabs_list_item.active a:before {
-    color: mediumblue;
-    background-color: mediumblue;
-  }
-  
-  .secnav_tabs_wrap {
-    
-    width: 100%;
-    height:fit-content;
-    display:inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+.secnav_tabs_list_item a:hover:before,
+.secnav_tabs_list_item.active a:before {
+  background-color: mediumblue;
+  width: 100%;
+}
+
+.secnav_tabs_list_item a:active {
+  color: mediumblue;
+  font-style: bold;
+  width: 100%;
+}
+
+.secnav_tabs_list_item.active a:before {
+  color: mediumblue;
+  background-color: mediumblue;
+}
+
+.secnav_tabs_wrap {
+
+  width: 100%;
+  height: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secnav_image {
+
+  margin-right: 10rem;
+  height: 12em;
+  width: 18em;
+  display: block;
+  opacity: 1;
+  /* transition: opacity 0.5s ease-out; */
+  text-align: center;
+
+}
+
+.secnav_infoblock {
+  margin-top: 80px;
+  /* background-color: blue; */
+  display: inline-block;
+  color: black;
+  position: relative;
+  overflow: hidden;
+
+  height: 15em;
+  width: 20rem;
+  /* font-size: 20px; */
+  line-height: 24px;
+  opacity: 1;
+  /* transition: opacity 0.5s ease-out; */
+  text-align: left;
+}
+
+.secnav_infoblock>span {
+
+  font-size: 30px;
+  font-style: normal;
+}
+
+.secnav_infoblock>p {
+  margin-top: 50px;
+  font-size: 0.6em;
+  font-style: normal;
+}
+
+.secnav_tab_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* center both items horizontally */
+
+  transition: height 0.9s ease-in-out;
+}
+
+.secnav_tab_inner.animating .secnav_image,
+.secnav_tab_inner.animating .secnav_infoblock {
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
+.secnav_image.secnav_fade_in,
+.secnav_infoblock.secnav_fade_in {
+  opacity: 1;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.secnav_image.secnav_fade_out,
+.secnav_infoblock.secnav_fade_out {
+  opacity: 0;
+}
+
+.secnav_image.secnav_fade_in,
+.secnav_infoblock.secnav_fade_in {
+  opacity: 1;
+}
+
+.secnav_image,
+.secnav_infoblock {
+  opacity: 1;
+  transition: opacity 4s ease-in-out;
+}
+
+.secnav_image.active,
+.secnav_infoblock.active {
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
   .secnav_image {
+    display: none;
+  }
+  .secnav_tabs_list_item span {
+    font-size: small;
+  }
+}
 
-    margin-right: 10rem;
-    height: 12em;
-    width: 18em;
-    display: block;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-    text-align: center; 
-    
+@media screen and (max-width: 768px) {
+  .secnav_image {
+    display: none;
   }
-  
-  .secnav_infoblock {
-    margin-top: 80px;
-   /* background-color: blue; */
-    display: inline-block;
-    color: black;
-    position: relative;
-    overflow: hidden;
-  
-    height: 15em;
-    width: 20rem;
-    /* font-size: 20px; */
-    line-height: 24px;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-    text-align: left; 
-  }
-  
-  .secnav_infoblock > span {
+}
 
-    font-size: 30px;
-    font-style: normal;
+@media screen and (max-width: 576px) {
+  .secnav_image {
+    display: none;
   }
-  
-  .secnav_infoblock > p {
-    margin-top: 50px;
-    font-size: 0.6em;
-    font-style: normal;
+  .secnav_tabs_list_item span {
+    font-size:xx-small;
+    line-height: 0em;
   }
-  
-  .secnav_tab_inner {
-    display:flex;
-    align-items: center;
-    justify-content: center; /* center both items horizontally */
-   
-    transition: height 0.9s ease-in-out;
-  }
-  
-  .secnav_tab_inner.animating .secnav_image,
-  .secnav_tab_inner.animating .secnav_infoblock {
-    opacity: 0;
-    transition: opacity 2s ease-out;
-  }
-  
-  .secnav_image.secnav_fade_in,
-  .secnav_infoblock.secnav_fade_in {
-    opacity: 1;
-    transition: opacity 0.9s ease-in-out;
-  }
-  
-  .secnav_image.secnav_fade_out,
-  .secnav_infoblock.secnav_fade_out {
-    opacity: 0;
-  }
-  
-  .secnav_image.secnav_fade_in,
-  .secnav_infoblock.secnav_fade_in {
-    opacity: 1;
-  }
-  
-  .secnav_image,
-  .secnav_infoblock {
-    opacity: 1;
-    transition: opacity 4s ease-in-out;
-  }
-  
-  .secnav_image.active,
-  .secnav_infoblock.active {
-    opacity: 1;
-    transition: opacity 3s ease-in-out;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .secnav_image {display: none;}
-    }
+}
