@@ -144,7 +144,6 @@
 
 .secnav_infoblock {
   margin-top: 80px;
-  /* background-color: blue; */
   display: inline-block;
   color: black;
   position: relative;
@@ -219,13 +218,17 @@
     display: none;
   }
   .secnav_tabs_list_item span {
-    font-size: small;
+    font-size: medium;
   }
 }
 
 @media screen and (max-width: 768px) {
   .secnav_image {
     display: none;
+  }
+  .secnav_tabs_list_item span {
+    font-size:small;
+    line-height: 0em;
   }
 }
 
@@ -234,7 +237,7 @@
     display: none;
   }
   .secnav_tabs_list_item span {
-    font-size:xx-small;
+    font-size:x-small;
     line-height: 0em;
   }
 }
