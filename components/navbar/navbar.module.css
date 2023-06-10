@@ -54,14 +54,14 @@
   text-decoration: underline;
 }
 
-.item > text {
+.item>text {
   margin: 0 20px;
   padding: 10px;
   color: black;
   text-decoration: none !important;
 }
 
-.item > a {
+.item>a {
   color: black;
   text-decoration: none !important;
 }
@@ -70,7 +70,7 @@
   list-style: none;
 }
 
-.brand > a {
+.brand>a {
   color: black;
   text-decoration: none !important;
 }
@@ -103,4 +103,3 @@
 #adminButton:hover {
   color: orange;
 }
-

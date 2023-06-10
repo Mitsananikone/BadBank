@@ -29,10 +29,8 @@
   overflow: hidden;
 }
 
-
 .secnav_tabs_list_item {
   box-sizing: border-box;
-  /* border: 1px solid red; */
   padding: 15px 0 4px;
   display: flex;
   margin: 0 20px;
@@ -52,13 +50,10 @@
   background-color: transparent;
 }
 
-
-
 .secnav_tabs_list_item.active {
   color: dodgerblue;
   background-color: dodgerblue;
 }
-
 
 .secnav_tabs_list_item.active a {
   color: blue;
@@ -71,10 +66,7 @@
 
 .secnav_tabs_list_item a:focus {
   color: mediumblue;
-  /* background-color: dodgerblue; */
-
 }
-
 
 .secnav_active_tab_line a {
   border-bottom: 1px solid mediumblue;
@@ -90,20 +82,7 @@
   bottom: -5px;
   left: 0;
   background-color: mediumblue;
-  /* transition: width 0.3s ease-out; */
 }
-
-/* .secnav_tabs_list_item a::after,
-  .secnav_tabs_list_item.active a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: mediumblue;
-    transition: width 0.3s ease-in;
-  } */
 
 .secnav_tabs_list_item a:hover:before,
 .secnav_tabs_list_item.active a:before {
@@ -123,7 +102,6 @@
 }
 
 .secnav_tabs_wrap {
-
   width: 100%;
   height: fit-content;
   display: inline-flex;
@@ -132,15 +110,11 @@
 }
 
 .secnav_image {
-
   margin-right: 10rem;
   height: 12em;
   width: 18em;
   display: block;
   opacity: 1;
-  /* transition: opacity 0.5s ease-out; */
-  text-align: center;
-
 }
 
 .secnav_infoblock {
@@ -149,18 +123,12 @@
   color: black;
   position: relative;
   overflow: hidden;
-
   height: 15em;
   width: 20rem;
-  /* font-size: 20px; */
-  line-height: 24px;
-  opacity: 1;
-  /* transition: opacity 0.5s ease-out; */
   text-align: left;
 }
 
 .secnav_infoblock>span {
-
   font-size: 30px;
   font-style: normal;
 }
@@ -175,8 +143,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* center both items horizontally */
-
   transition: height 0.9s ease-in-out;
 }
 
@@ -218,6 +184,7 @@
   .secnav_image {
     display: none;
   }
+
   .secnav_tabs_list_item span {
     font-size: medium;
   }
@@ -227,8 +194,9 @@
   .secnav_image {
     display: none;
   }
+
   .secnav_tabs_list_item span {
-    font-size:small;
+    font-size: small;
     line-height: 0em;
   }
 }
@@ -237,8 +205,9 @@
   .secnav_image {
     display: none;
   }
+
   .secnav_tabs_list_item span {
-    font-size:x-small;
+    font-size: x-small;
     line-height: 0em;
   }
 }

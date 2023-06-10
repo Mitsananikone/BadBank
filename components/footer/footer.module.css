@@ -1,19 +1,14 @@
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
-
-
 #footerContainer {
-    display:flex;
-    background-color: #ebf8ff;
+    background-color: cornflowerblue;
+    color: #718096;
+    display: flex;
     font-weight: 300;
-    padding: 32px;
-    width: 100vw;
-    min-width: 440px;
     margin-left: auto;
     margin-right: auto;
-    color: #718096;
-    border: 1px solid orange;
+    min-width: 440px;
+    padding: 0;
+    width: 100vw;
+
 }
 
 .footerInner {
@@ -25,65 +20,87 @@
 }
 
 .footerInnerFlex {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: -1rem;
     margin-right: -1rem;
     min-width: 440px;
+    padding: 0px;
 }
 
 .footerTextBlock {
-    display: fluid;
-    padding: 1rem;
     flex-wrap: wrap;
-    word-wrap:wrap;
+    justify-content: left;
     margin-right: 0;
-    width: 25em;
+    max-height: 350px;
+    min-width: 200px;
+    padding: 1rem;
     text-align: left;
+    width: 20vw;
+    word-wrap: wrap;
 }
 
 .footerHeader {
-    font-weight: 500;
     color: #1d4ed8;
-
     display: inline-block;
+    font-size: 1.875rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
     margin-right: auto;
-    font-size: 1.875rem;
-    color: #2563eb;
-    text-transform: uppercase;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .footerParagraph {
-    margin-bottom: 1rem;
     font-size: 0.875rem;
+    margin-bottom: 1rem;
     text-align: left;
 }
 
 .icons {
     display: flex;
-    flex: flex-wrap;
+    flex-wrap: wrap;
 }
 
 .iconsInner {
-    flex-wrap: wrap;
     display: inline-flex;
-    margin-left: 0.75rem;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
+    margin-left: 0.75rem;
 }
 
 .footerInfoBlocks {
-    /* border: 1px solid red; */
     display: inline-block;
-    /* padding: 1rem; */
-    width: 20em;
+    flex-wrap: nowrap;
     margin: 10px;
-    flex-wrap:nowrap;
+    min-width: 200px;
+    width: 20vw;
+}
+
+.footerInfoBlocks > h2 {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2563eb;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    text-align: right;
 }
 
 @media (max-width: 440px) {
     .footerInfoBlocks {
-      width: 100px;
+        width: 100px;
     }
-  }
+}
+
+.blueHover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.blueHover:hover {
+    opacity: 0.5;
+    font-weight: 800;
+    text-decoration: none;
+}

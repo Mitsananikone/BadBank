@@ -1,114 +1,112 @@
 .infobanner {
-    padding: 0;
-    margin:0;
-    border:0;
-}
-
-.infobanner_container {
-    width: 90%;
-    margin: 0;
-    padding: 0;
-    /* border: 1px solid green; */
-   
+  border: 0;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .infobanner_container {
+  margin: 0;
+  padding: 0;
+  width: 90%;
   }
   
   .infoBanner_slider_container {
-    /* border: 1px solid red; */
+  /* border: 1px solid red; */
   }
+  
   .infobanner_image_container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: auto;
-    overflow: hidden;
-    /* background-color: rgba(0, 0, 0, 0.5);  */
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: auto;
+  overflow: hidden;
   }
   
   .infobanner_image_container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* resize the image to cover the entire container */
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
   }
   
   .infobanner_text_wrapper {
-   background-color: transparent;
-    font-size: large;
-    color: white;
-    max-width: 100%;
-    margin: 0;
+  background-color: transparent;
+  color: white;
+  font-size: large;
+  margin: 0;
+  max-width: 100%;
   }
   
   .infobanner_heading {
-    font-size: 2rem;
-    margin-top: 0;
+  font-size: 2rem;
+  margin-top: 0;
   }
   
   .infobanner_title {
-    font-size: 1.5rem;
-    margin-top: 0;
+  font-size: 1.5rem;
+  margin-top: 0;
   }
   
   .infobanner_body {
-    font-size: 1rem;
-    margin-top: 0;
+  font-size: 1rem;
+  margin-top: 0;
   }
   
   .infobanner_image_container {
-    height: 100%;
-    position: relative;
-    /* overflow: hidden; */
-    text-align: left;
-    z-index: 1;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 1;
   }
   
   .infobanner_image_container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   }
   
   .infobanner_image_container img {
-    display: flex;
-    width: 101%;
-    height: 100%;
+  display: flex;
+  height: 100%;
+  width: 101%;
   }
   
   .infobanner_text_container {
-    width: 30%;
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    background-color: transparent;
-    color: black;
-    padding: 1rem;
-    z-index: 2;
-    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+  background-color: transparent;
+  color: black;
+  left: 15%;
+  padding: 1rem;
+  position: absolute;
+  top: 10%;
+  width: 30%;
+  z-index: 2;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
   
   .infobanner_card_footer {
-    text-decoration: none;
-    position: absolute;
-    bottom: -50px;
-    left: 20px;
+  bottom: -50px;
+  left: 20px;
+  position: absolute;
+  text-decoration: none;
   }
   
   .infobanner_learn_more_button {
-    background-color: cornflowerblue;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    bottom: 0
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 8px;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 16px;
   }
   
   .infobanner_learn_more_button:hover {
-    background-color: lightskyblue
+  background-color: lightskyblue;
   }

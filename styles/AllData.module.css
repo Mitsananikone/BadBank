@@ -1,23 +1,59 @@
 /* alldata.module.css */
 
+.AllData_button {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.AllData_button:hover {
+  background-color: lightcoral;
+}
+
 .AllData_container {
-  width: 100vw;
-  margin-top: 20px;
+  align-items: center;
+  background: linear-gradient(to bottom right, #FFA500, #FFCC80);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom right, #FFA500, #FFCC80);
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  min-width: 440px;
+  width: 100vw;
+}
+
+.AllData_header {
+  font-size: 24px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .AllData_table {
-  margin-top: 50px;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #fff;
-  width: 80%;
   box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
+  width: 80%;
+}
+
+.AllData_table_container {
+  margin-top: 20px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.AllData_table td,
+.AllData_table th {
+  margin: 20px;
+  padding: 20px;
+}
+
+.AllData_table tbody tr {
+  text-align: center;
 }
 
 .AllData_table thead tr {
@@ -25,69 +61,37 @@
   text-align: center;
 }
 
-.AllData_table th,
-.AllData_table td {
-  padding: 20px;
-  margin: 20px;
-}
-
-.AllData_table tbody tr {
-  text-align: center;
-}
-
-.AllData_button {
-  padding: 5px 10px;
-  border-radius: 3px;
-  border-color: #ccc;
-  background-color: #f2f2f2;
-}
-
-.AllData_button:hover {
-  background-color: lightcoral;
-}
-
-.AllData_header {
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.AllData_table_container {
-  margin-top: 20px;
-  width: 100%;
-  overflow-x: auto;
-}
-
 /* Media Queries */
 
 @media screen and (max-width: 1200px) {
-  .AllData_table th:nth-child(2),
-  .AllData_table td:nth-child(2) {
+  .AllData_table td:nth-child(2),
+  .AllData_table th:nth-child(2) {
     display: none;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .AllData_table th:nth-child(4),
-  .AllData_table td:nth-child(4) {
+  .AllData_table td:nth-child(4),
+  .AllData_table th:nth-child(4) {
     display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .AllData_table th:nth-child(3),
-  .AllData_table td:nth-child(3) {
+  .AllData_table td:nth-child(3),
+  .AllData_table th:nth-child(3) {
     display: none;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .AllData_table th:nth-child(3),
-  .AllData_table td:nth-child(3) {
+
+  .AllData_table td:nth-child(3),
+  .AllData_table th:nth-child(3) {
     display: none;
   }
-  .AllData_table th:nth-child(4),
-  .AllData_table td:nth-child(4) {
+  .AllData_table td:nth-child(4),
+  .AllData_table th:nth-child(4) {
     display: none;
   }
 }

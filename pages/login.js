@@ -60,7 +60,7 @@ export default function Login() {
       setMessage(`Success! Welcome, ${capitalizeFirstLetter(user.name)}.`);
       setShowSuccess(true);
     } catch (error) {
-      setMessage(`User Email and Password could not be verified XXXXX`);
+      setMessage(`User Email and Password could not be verified`);
       setShowError(true);
     } finally {
       setLoading(false);

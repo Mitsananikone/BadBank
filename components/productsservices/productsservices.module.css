@@ -9,14 +9,12 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 100px;
   width: 100vw;
-  /* background-color: transparent transparent; */
- 
-}
-
-.prodserv_card {
+  }
+  
+  .prodserv_card {
   position: relative;
   color: black;
-  flex: 0 0 300px; /* Set a fixed width for each card */
+  flex: 0 0 300px;
   background-color: transparent;
   border-radius: 8px;
   font-family: Arial, Helvetica, sans-serif;
@@ -28,50 +26,44 @@
   text-align: left;
   box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-
-
-.prodserv_card:hover {
+  }
+  
+  .prodserv_card:hover {
   transform: scale(1.05) translateZ(10px);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.iconImg {
-
+  }
+  
+  .iconImg {
   position: absolute;
   top: 10px;
   left: 10px;
   height: 80px;
   width: 80px;
-}
-
-.prodserv_card_header {
+  }
+  
+  .prodserv_card_header {
   margin-top: 100px;
   font-size: larger;
-}
-
-.prodserv_card-title {
+  }
+  
+  .prodserv_card-title {
   margin-top: 0;
   margin-bottom: 16px;
-
-}
-
-.prodserv_card-link {
+  }
+  
+  .prodserv_card-link {
   position: absolute;
   bottom: 0;
   left: 0;
   margin-bottom: 20px;
-  /* adjust this value as needed */
-}
-
-.prodserv_card-link:hover {
+  }
+  
+  .prodserv_card-link:hover {
   text-decoration: underline;
-}
-
-
-.prodserv-card-footer {
+  }
+  
+  .prodserv-card-footer {
   margin-top: auto;
   width: 300px;
   font-size: x-small;
@@ -79,11 +71,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-}
-
-.prodserv_learn_more_button {
-
-  /* display: flex; */
+  }
+  
+  .prodserv_learn_more_button {
   position: absolute;
   background-color: cornflowerblue;
   color: white;
@@ -92,38 +82,25 @@
   left: 0;
   margin-top: 60px;
   margin-left: 20px;
-  /* margin-bottom: 20px; */
-  position: absolute;
   padding: 10px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-}
-
-
-.prodserv_learn_more_button:hover {
+  }
+  
+  .prodserv_learn_more_button:hover {
   color: black;
   opacity: 0.6;
-  /* transform: scale(1.05) translateZ(10px); */
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product_service_container {
+  }
+  
+  .product_service_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Change justify-content to center */
+  justify-content: center;
   padding: 20px;
   border: 1px solid ghostwhite;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-/* .prodserv-card-align {
-    border: 1px solid red;
-   
-    width: 100%;
-  } */
+  }
