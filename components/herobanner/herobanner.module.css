@@ -3,11 +3,11 @@
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-    max-width: 100vw;
+    max-width: 100%;
     min-width: 30vw;
     padding-top: 100px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 5em;
+    padding-right: 5em;
   }
 
 .flex_container{
@@ -49,6 +49,13 @@
   line-height: 1.25;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+}
+
+@media (max-width: 325px) {
+  .info {
+    color: black;
+    font-weight: 300;
+  }
 }
 
 @media (min-width: 1024px) {

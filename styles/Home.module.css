@@ -9,18 +9,20 @@
 .App {
   width: 100%;
   margin-left: 0;
-  margin-right: 0;
+  margin-right: 1px;
   text-align: center;
-  background-color: white;
+  min-width: 440px;
   /* border: 1px solid red; */
+  background-color: rgba(255,255,255,1);
 }
 
 
 .App_container {
   /* border: 1px solid red; */
   width: 100vw;
+  min-width: 440px;
   position: relative;
-  background-color: white;
+  /* background-color: white; */
   /* min-height: fit-content; */
   display: flex;
   flex-direction: column;

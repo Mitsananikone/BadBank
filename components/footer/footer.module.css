@@ -9,9 +9,11 @@
     font-weight: 300;
     padding: 32px;
     width: 100vw;
+    min-width: 440px;
     margin-left: auto;
     margin-right: auto;
     color: #718096;
+    border: 1px solid orange;
 }
 
 .footerInner {
@@ -27,12 +29,16 @@
     flex-wrap: wrap;
     margin-left: -1rem;
     margin-right: -1rem;
+    min-width: 440px;
 }
 
 .footerTextBlock {
+    display: fluid;
     padding: 1rem;
+    flex-wrap: wrap;
+    word-wrap:wrap;
     margin-right: 0;
-    width: 25rem;
+    width: 25em;
     text-align: left;
 }
 
@@ -71,13 +77,13 @@
     /* border: 1px solid red; */
     display: inline-block;
     /* padding: 1rem; */
-    width: 20vw;
+    width: 20em;
     margin: 10px;
     flex-wrap:nowrap;
 }
 
-/* @media (min-width: 640px) {
+@media (max-width: 440px) {
     .footerInfoBlocks {
-      width: 200px;
+      width: 100px;
     }
-  } */
+  }

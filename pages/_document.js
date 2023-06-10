@@ -4,7 +4,8 @@ export default function Document() {
   return (
     <Html lang="en" >
       <Head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" />
+
 
       </Head>
 
@@ -12,7 +13,7 @@ export default function Document() {
 
         <Main />
         <NextScript />
-    
+
 
       </body>
     </Html>
