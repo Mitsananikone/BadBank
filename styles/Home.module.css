@@ -62,9 +62,11 @@
 }
 
 #ProdServ_container {
+  /* border: 1px solid red; */
   display: inline-block;
   color: black;
   margin-top: 300px;
+  margin-bottom: 200px;
   width: 80%;
   height: auto;
   padding: 0;
@@ -73,9 +75,11 @@
   margin-right: 10vh;
   box-sizing: border-box;
   overflow: hidden;
+  background-color: transparent;
 }
 
 .product_service_container {
+  
   display: inline-block;
   background-color: transparent;
   display: inline-block;
@@ -113,7 +117,6 @@
 
 #footerContainer {
   clear: both;
-  margin-top: 20px;
   position: fixed;
   bottom: 0;
   left: 0;

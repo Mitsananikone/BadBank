@@ -4,6 +4,15 @@ const nextConfig = {
 }
 
 module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/old-page',
+        destination: '/new-page',
+        permanent: true,
+      },
+    ];
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

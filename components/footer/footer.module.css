@@ -4,9 +4,8 @@
 
 
 #footerContainer {
-    display:flexbox;
+    display:flex;
     background-color: #ebf8ff;
-    margin-top: 300px;
     font-weight: 300;
     padding: 32px;
     width: 100vw;
@@ -69,9 +68,12 @@
 }
 
 .footerInfoBlocks {
+    /* border: 1px solid red; */
     display: inline-block;
-    padding: 1rem;
-    width: 30vw;
+    /* padding: 1rem; */
+    width: 20vw;
+    margin: 10px;
+    flex-wrap:nowrap;
 }
 
 /* @media (min-width: 640px) {

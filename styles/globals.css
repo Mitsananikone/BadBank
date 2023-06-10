@@ -1,6 +1,11 @@
-#root {
-  width: 100vh;
-  overflow-x: hidden;
+:root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #__next {
@@ -9,17 +14,27 @@
 }
 
 html {
-  width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  min-width: 440px;
   }
 
   body {
-    width:100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    margin-left: auto;
-    margin-right: auto;
     background: linear-gradient(to bottom right, #6495ED, #87CEFA);
+  }
+
+  @media screen and (max-width: 440px) {
+    :root {
+     border: 1px solid red;
+     width:440px !important;
+    }
+    body
+    .App_container {
+      border: 10px solid blue;
+      width:440px;
+    }
   }
