@@ -1,9 +1,25 @@
+#root {
+  width: 100vh;
+  overflow-x: hidden;
+}
+
+#__next {
+  
+  width: 100vw;
+}
+
 html {
-    width:200%;
-    min-width: max-content;
-    height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   }
 
   body {
+    width:100%;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
     background: linear-gradient(to bottom right, #6495ED, #87CEFA);
   }

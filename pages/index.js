@@ -4,6 +4,7 @@ import { getAllUsers } from '../lib/dal';
 import { connectToDatabase } from '../lib/mongodb';
 import { UserContext } from '../contexts/usercontext';
 
+
 require('dotenv').config();
 
 export default function App({ allUsers = [] }) {
@@ -13,32 +14,32 @@ export default function App({ allUsers = [] }) {
     console.log('Index user:', user); // Log the user to the console
   }, [user]);
 
-  const handleLogin = async () => {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }), // Pass email and password from state
-      });
+  // const handleLogin = async () => {
+  //   try {
+  //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ email, password }), // Pass email and password from state
+  //     });
 
-      if (res.status !== 200) {
-        throw new Error(await res.text());
-      }
+  //     if (res.status !== 200) {
+  //       throw new Error(await res.text());
+  //     }
 
-      const { user, token } = await res.json(); // Assuming the response includes the token
+  //     const { user, token } = await res.json(); // Assuming the response includes the token
 
-      // Save the user and token in the UserContext state
-      setUser({ ...user, token });
+  //     // Save the user and token in the UserContext state
+  //     setUser({ ...user, token });
 
-    } catch (error) {
-      console.error('Error logging in:', error);
-    }
-  };
+  //   } catch (error) {
+  //     console.error('Error logging in:', error);
+  //   }
+  // };
 
   return (
-    <div className="homeContainer">
+    <div className="root" style={{width: '100%'}}>
       <Home />
     </div>
   );

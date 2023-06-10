@@ -91,9 +91,9 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <section id={styles.footer_container}>
+      {/* <section id={styles.footer_container}>
         <Footer />
-      </section>
+      </section> */}
     </div>
   );
 }
