@@ -1,4 +1,4 @@
-# Banking Application
+# BAD BANK 
 
 This project is a banking application that allows users to create an account, log in, deposit money, withdraw money, and manage user information. The application is built using Next.js for enhanced user experience, React for the frontend, Express for the backend, and MongoDB for data storage. The application is deployed using Vercel and is available to see online.
 
