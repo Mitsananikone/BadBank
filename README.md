@@ -33,6 +33,11 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
 ## Screenshots
 
 ![Alt Text](/public/images/badbank_home.JPG)
+![Alt Text](/public/images/badbank_createaccount.JPG)
+![Alt Text](/public/images/badbank_deposit.JPG)
+![Alt Text](/public/images/badbank_transaction.JPG)
+![Alt Text](/public/images/badbank_adminLogin.JPG)
+![Alt Text](/public/images/badbank_adminPage.JPG)
 
 
 ## Usage
