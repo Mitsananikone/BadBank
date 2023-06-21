@@ -40,6 +40,11 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
   <img src="/public/images/badbank_adminPage.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
 </div>
 
+
+## Demonstration
+[![Try Demo](https://img.shields.io/badge/Try%20Demo-blueviolet?style=flat-square)](https://badbank-ruddy.vercel.app/)
+
+
 ## Usage
 
 To run the application locally:
@@ -49,9 +54,6 @@ To run the application locally:
 3. Configure the MongoDB connection in the application's configuration files.
 4. Run the application: `npm run dev`
 5. Access the application in your browser at `http://localhost:3000`.
-
-## Demonstration
-[![Try Demo](https://img.shields.io/badge/Try%20Demo-blueviolet?style=flat-square)](https://badbank-ruddy.vercel.app/)
 
 
 
