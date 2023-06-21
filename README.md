@@ -16,6 +16,8 @@ This project is a banking application that allows users to create an account, lo
 
 - **Admin Page**: An admin page is included, allowing authorized administrators to manage user information. Admins can delete users from the database using a password-protected interface. The password to access the admin page is "admin".
 
+
+
 ## Technologies Used
 
 - Next.js: Utilized for enhanced user experience, server-side rendering, and efficient routing.
@@ -26,9 +28,13 @@ This project is a banking application that allows users to create an account, lo
 - Mongoose: Used for database connectivity and interaction, simplifying the integration with MongoDB.
 - APIs: Leveraged the ease of API development provided by Next.js, enabling smooth communication between frontend and backend.
 
+
+
 ## Deployment
 
 The application is deployed using Vercel, a popular hosting platform for Next.js applications. The deployment ensures accessibility and availability of the application online.
+
+
 
 ## Screenshots
 <div>
@@ -39,6 +45,7 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
   <img src="/public/images/badbank_adminLogin.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
   <img src="/public/images/badbank_adminPage.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
 </div>
+
 
 
 ## Demonstration
@@ -61,10 +68,5 @@ To run the application locally:
 
 ## Contributors
 
-- [Your Name]: Developer and creator of the application.
+- Mit Sananikone: Developer and creator of the application.
 
-## License
-
-[Specify the license under which the project is distributed, if applicable.]
-
-Please note that this is a sample README.md file that can be used as a starting point. Modify and update it according to your specific project requirements and information.
