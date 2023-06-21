@@ -32,7 +32,7 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
 
 ## Screenshots
 
-![Alt Text](/public/images/badbank_home.jpeg)
+![Alt Text](/public/images/badbank_home.JPG)
 
 
 ## Usage
