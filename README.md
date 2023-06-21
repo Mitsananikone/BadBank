@@ -42,7 +42,8 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
 
 
 ## Demonstration
-<a href="https://badbank-ruddy.vercel.app/" style="padding: 10px 20px; font-size: 18px; background-color: blueviolet; color: white; border-radius: 5px; text-decoration: none;">Try Demo</a>
+[![Try Demo](https://img.shields.io/badge/Try%20Demo-blueviolet?style=flat-square)](https://badbank-ruddy.vercel.app/)
+
 
 
 
