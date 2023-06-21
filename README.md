@@ -31,13 +31,14 @@ This project is a banking application that allows users to create an account, lo
 The application is deployed using Vercel, a popular hosting platform for Next.js applications. The deployment ensures accessibility and availability of the application online.
 
 ## Screenshots
-<img src="/public/images/badbank_home.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-<img src="/public/images/badbank_createaccount.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-<img src="/public/images/badbank_deposit.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-<img src="/public/images/badbank_transaction.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-<img src="/public/images/badbank_adminLogin.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-<img src="/public/images/badbank_adminPage.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
-
+<div>
+  <img src="/public/images/badbank_home.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+  <img src="/public/images/badbank_createaccount.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+  <img src="/public/images/badbank_deposit.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+  <img src="/public/images/badbank_transaction.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+  <img src="/public/images/badbank_adminLogin.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+  <img src="/public/images/badbank_adminPage.JPG" alt="home" width="400" height="auto" style="display:inline-block; margin-right:10px">
+</div>
 
 ## Usage
 
