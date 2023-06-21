@@ -32,7 +32,8 @@ The application is deployed using Vercel, a popular hosting platform for Next.js
 
 ## Screenshots
 
-- Include screenshots of the application's main pages, showcasing the frontend design and demonstrating the functionality.
+![Alt Text](images/badbank_home.jpeg)
+
 
 ## Usage
 
